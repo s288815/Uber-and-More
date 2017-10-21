@@ -1,0 +1,17 @@
+{
+  "name": "uber-like",
+  "version": "0.0.0",
+  "description": "FYP: make a Uber-like application with additional features",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "js": "./node_modules/.bin/rollup -c",
+    "js-w": "./node_modules/.bin/rollup -c -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^0.50.0",
+    "rollup-plugin-json": "^2.3.0"
+  }
+}

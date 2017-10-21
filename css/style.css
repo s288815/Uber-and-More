@@ -1,0 +1,336 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-size: 2.4rem;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+
+input, textarea, select, button {
+    font-family: inherit;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+
+
+
+.bg {
+    background: #000;
+    color: #fff;
+}
+
+
+
+
+
+.app-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-map {
+    background: rgba(200,200,255,.2);
+    flex: 1 1 30rem;
+    align-content: stretch;
+    position: relative;
+    overflow: hidden;
+}
+
+    .app-map__container {
+        height: 100%;
+    }
+
+
+.app-bar {
+    max-height: 56px;
+    background: #09091a;
+    flex: 0 1 5.6rem;
+    align-content: stretch;
+    box-shadow: 0 -1px 3px 0px rgba(0,0,0,.5);
+}
+
+.app-bar__container {
+    display: flex;
+    height: 100%;
+}
+
+
+
+.app-bar__user {
+    flex: 0 1 auto;
+    padding: 1.3rem 1.5rem;
+}
+    .avatar {
+        width: 1.25em;
+        height: 1.25em;
+        border-radius: 50%;
+        color: #c0c0c8;
+        position: relative;
+        text-align: center;
+        background: #222233;
+        box-shadow: 0 0 0 5px #161629;
+    }
+
+    .avatar__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .online-indicator {
+        display: none;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #3ac147;
+        position: absolute;
+        top: calc(100% - 4px);
+        left: calc(100% - 4px);
+    }
+    .online-indicator.online {
+        display: block;
+    }
+
+.app-bar__action {
+    flex: 1 1 auto;
+    padding: 1rem;
+    text-align: center;
+}
+.app-bar__menu {
+    flex: 0 1 auto;
+    padding: 1.6rem;
+    cursor: pointer;
+}
+
+
+
+.app-menu {
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: left 0s ease-in-out .3s;
+}
+
+.app-menu__overlay {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all .3s ease-in-out;
+}
+
+.app-menu__container {
+    width: 75%;
+    height: 100%;
+    /*background: #161629;*/
+    background: #222233;
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translateX(-0%);
+    transition: all .3s ease-in-out;
+}
+
+.app-menu.open {
+    left: 0;
+    transition: all 0s ease-in-out;
+}
+
+.open .app-menu__overlay {
+    opacity: .75;
+    transition: all .3s ease-in-out;
+}
+
+.open .app-menu__container {
+    transform: translateX(-100%);
+    transition: all .3s ease-in-out;
+}
+
+
+
+/* #BUTTON */
+.c-btn {
+    font-size: 1.6rem;
+    padding: 0.4em 1em;
+    line-height: 1;
+    border-radius: 2em;
+    border: 0 none transparent;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.c-btn:active {
+    opacity: .75;
+}
+
+
+.c-btn:disabled {
+    opacity: 0.5;
+}
+
+/* Size variant */
+.c-btn--large {
+    padding: 0.625em 1em;
+}
+.c-btn--round {
+    font-size: 1em;
+    width: 3em;
+    line-height: 3;
+    padding: 0;
+    border-radius: 50%;
+}
+
+
+/* Style & color variant */
+.c-btn--primary {
+    background: #1fbad6;
+    color: #fff;
+}
+
+.c-btn--secondary {
+    background: #09091a;
+    color: #fff;
+}
+
+.c-btn--tertiary {
+    background: #fff;
+    color: #09091a;
+}
+
+
+.c-btn--ghost {
+    background: transparent;
+}
+
+.c-btn--primary.c-btn--ghost {
+    color: #1fbad6;
+    box-shadow: inset 0 0 0 1px currentColor;
+}
+
+.c-btn--secondary.c-btn--ghost {
+    color: #09091a;
+    box-shadow: inset 0 0 0 1px currentColor;
+}
+
+.c-btn--tertiary.c-btn--ghost {
+    color: #fff;
+    box-shadow: inset 0 0 0 1px currentColor;
+}
+
+
+
+
+/* MAP */
+/* Hide watermarks */
+.gm-style > :nth-child(n+2) {
+    display: none;
+}
+
+/*
+.gmnoprint,
+.gm-style-cc {
+    display: none;
+}
+*/
+
+
+/* #LOGIN */
+.m-login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.m-login__input {
+    font-size: 1.8rem;
+    width: 200px;
+    margin-bottom: 1em;
+    padding: .5em;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+}
+
+
+
+
+.short-msg {
+    display: inline-block;
+    background: rgba(0,0,0,.75);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: .5em 1em;
+    border-radius: 1.5em;
+    position: absolute;
+    left: 50%;
+    bottom: 1em;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.short-msg.on-demand {
+    background: #1fbad6;
+}
+
+.short-msg.hide {
+    opacity: 0;
+    bottom: -2.5em;
+}
+
+
+
+.dialog {
+    display: none;
+}
+
+
+/* Overrides Bootstrap's */
+
+.modal {
+    font-size: 1.4rem;
+    color: #292b2c;
+}
+
+/*
+.modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}*/
